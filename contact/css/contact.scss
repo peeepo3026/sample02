@@ -1,0 +1,341 @@
+
+html {
+  font-size:62.5%;
+}
+body {
+  font-size:1.6rem;
+  font-family: 'Noto Serif','Noto Serif JP',  serif;
+  letter-spacing: 0.05em;
+  color: #171717;
+}
+*, *::before, *::after {
+  box-sizing:border-box;
+  padding: 0;
+  margin: 0;
+}
+.clearfix::after {
+  content:'';
+  display:block;
+  clear:both;
+}
+
+ul, li{
+  list-style: none;
+  
+}
+
+a{
+  text-decoration: none;
+}
+
+section{
+  text-align: center;
+}
+
+.wid_container{
+  max-width: 1200px;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    max-width: 345px;
+  }
+}
+
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    max-width: 345px;
+  }
+}
+
+// Our-Content
+.our_content{
+  color: #171717;
+  font-size: 9.0rem;
+  opacity: .05;
+  @media (max-width: 768px) {
+    font-size: 4rem;
+  }  
+}
+
+// コンテントタイトル
+.contents_title{
+  font-size: 6.0rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+  // line-height: calc(48 / 60);
+  font-weight: 700;
+  font-style: italic;
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
+  &::after{
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    height: 5px;
+    background: #fff;
+    margin-left: 30px;
+    @media (max-width: 768px) {
+      width: 90px;
+    }    
+  }
+}
+// ボタン
+.form-btn{
+  text-align: center;
+  margin-top: 80px;
+  .content_button{
+    width: 235px;
+    background: #F7D43F;
+    border-radius: 30px;
+    border: 1px solid #000;
+    box-shadow: 0 0 6px  #1B1310;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 85px;
+    outline: none;
+    &:hover{
+      opacity: 0.7;
+    }
+  } 
+}
+
+// ナビ
+header{
+  width: 100%;
+  padding: 19px 30px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  @media (max-width: 768px) {
+    padding: 30px 0;   
+  }
+  .nav_container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 768px) {
+      margin: 0 4%;
+    }    
+    .nav_icon{
+      a{
+        font-size: 2.6rem;
+        line-height: calc(36 / 26);
+        font-style: italic;
+        font-weight: bold;
+        color: #fff;
+      }
+    }
+    .nav_contents{
+      @media (max-width: 768px) {
+        // display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #282F35;
+        color: #fff;
+        width: 100vw;
+        height: 100vh;
+
+      }
+      .nav_items{
+        display: flex;
+        @media (max-width: 768px) {
+          display: block;
+          width: 70px;
+          margin: 0 auto;
+          padding-top: 210px;
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-40%, -50%);
+  
+        }        
+        .nav_item{
+          margin-left: 30px;
+          @media (max-width: 768px) {
+            margin: 0 0 30px;
+          }          
+          a{
+            font-size: 1.6rem;
+            line-height: calc(22 / 16);
+            font-style: italic;
+            font-weight: bold;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .openbtn{
+      display: none;
+      position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+      // background:#57a2c7;
+      cursor: pointer;
+      width: 30px;
+      height: 20px;
+      border-radius: 3px;
+      line-height: 100%;
+      @media (max-width: 768px) {
+        display: block;
+      }
+      span{
+        display: inline-block;
+        transition: all .4s;/*アニメーションの設定*/
+        position: absolute;
+        // left: 14px;
+        height: 3px;
+        border-radius: 2px;
+        background: #fff;
+        width: 30px;
+        &:nth-of-type(1){
+          // top: 15px;
+          top: 0px;
+          // margin-bottom: 8px;
+        }
+        &:nth-of-type(2){
+          // top: 23px;
+          top: 8px;
+          // margin-bottom: 8px;
+        }
+        &:nth-of-type(3){
+          // top: 31px;
+          top: 16px;
+        }
+        
+      }
+    }
+    .openbtn.active span:nth-of-type(1) {
+      top: 18px;
+      right: 18px;
+      transform: translateY(6px) rotate(-45deg);
+    }
+    .openbtn.active span:nth-of-type(2) {
+      opacity: 0;/*真ん中の線は透過*/
+    }
+    .openbtn.active span:nth-of-type(3){
+      top: 30px;
+      right: 18px;
+      transform: translateY(-6px) rotate(45deg);
+    } 
+  }
+}
+
+.noscroll{
+  overflow: hidden;
+}
+
+// スティッキーヘッダー
+header.sticky{
+  position: fixed;
+  top: 0; 
+  background: #282f35;
+  padding: 30px 0;
+  @media (max-width: 768px) {
+    width: 100vw;
+  }  
+}
+// ファーストビュー
+.wrapper{
+  position: relative;
+  .contact_img{
+    @media (max-width: 768px) {
+      height: 360px;
+    }
+    img{
+      width: 100%;
+      @media (max-width: 768px) {
+        height: 360px;
+      }
+
+    }
+  }
+  .fv_txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    @media (max-width: 768px) {
+      
+    }
+    h1{
+      font-size: 7.0rem;
+      font-weight: 700;
+      @media (max-width: 768px) {
+        font-size: 3.7rem;
+      }
+    }
+  }
+  .our_content{
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+      position: absolute;
+      bottom: 40px;
+      left: 15px;
+      color: #fff;
+    }
+}
+}
+// Contact
+.contact{
+  padding-top: 100px;
+  padding-bottom: 80px;
+  .wid_container{
+    form{
+      width: 700px;
+      margin: 0 auto;
+      @media (max-width: 768px) {
+        width: 100%;
+      }  
+      .form-group{
+        margin-bottom: 22px;
+        label{
+          font-size: 1.6rem;
+          letter-spacing: 0.05em;
+          font-weight: bold;
+        }
+        .check_group{
+          .form-check{
+            display: inline-block;
+            margin-right: 20px;
+            @media (max-width: 768px) {
+              display: block;
+              margin-bottom: 5px;
+            }  
+            label{
+              font-weight: normal;
+            }
+          }    
+        }
+        .form-control{
+          width: 100%;
+          line-height: 30px;
+        }
+        .form-control-txt{
+          width: 100%;
+          line-height: 19px;
+        }
+      }
+      .submit{
+        margin-top: 80px;
+      }
+    }
+  }
+}
+// footer
+footer{
+  text-align: center;
+  p{
+    color: #282F35;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    padding: 30px 0;
+  }
+}
+

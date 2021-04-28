@@ -1,0 +1,414 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Noto Serif','Noto Serif JP',  serif;
+  letter-spacing: 0.05em;
+  color: #171717;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  text-align: center;
+}
+
+.wid_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .wid_container {
+    max-width: 345px;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 345px;
+  }
+}
+
+.our_content {
+  color: #171717;
+  font-size: 9.0rem;
+  opacity: .05;
+}
+
+@media (max-width: 768px) {
+  .our_content {
+    font-size: 4rem;
+  }
+}
+
+.contents_title {
+  font-size: 6.0rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .contents_title {
+    font-size: 3rem;
+  }
+}
+
+.contents_title::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 200px;
+  height: 5px;
+  background: #fff;
+  margin-left: 30px;
+}
+
+@media (max-width: 768px) {
+  .contents_title::after {
+    width: 90px;
+  }
+}
+
+.form-btn {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.form-btn .content_button {
+  width: 235px;
+  background: #F7D43F;
+  border-radius: 30px;
+  border: 1px solid #000;
+  -webkit-box-shadow: 0 0 6px  #1B1310;
+          box-shadow: 0 0 6px  #1B1310;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 85px;
+  outline: none;
+}
+
+.form-btn .content_button:hover {
+  opacity: 0.7;
+}
+
+header {
+  width: 100%;
+  padding: 19px 30px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 30px 0;
+  }
+}
+
+header .nav_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  header .nav_container {
+    margin: 0 4%;
+  }
+}
+
+header .nav_container .nav_icon a {
+  font-size: 2.6rem;
+  line-height: calc(36 / 26);
+  font-style: italic;
+  font-weight: bold;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  header .nav_container .nav_contents {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #282F35;
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+header .nav_container .nav_contents .nav_items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  header .nav_container .nav_contents .nav_items {
+    display: block;
+    width: 70px;
+    margin: 0 auto;
+    padding-top: 210px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-40%, -50%);
+            transform: translate(-40%, -50%);
+  }
+}
+
+header .nav_container .nav_contents .nav_items .nav_item {
+  margin-left: 30px;
+}
+
+@media (max-width: 768px) {
+  header .nav_container .nav_contents .nav_items .nav_item {
+    margin: 0 0 30px;
+  }
+}
+
+header .nav_container .nav_contents .nav_items .nav_item a {
+  font-size: 1.6rem;
+  line-height: calc(22 / 16);
+  font-style: italic;
+  font-weight: bold;
+  color: #fff;
+}
+
+header .nav_container .openbtn {
+  display: none;
+  position: relative;
+  /*ボタン内側の基点となるためrelativeを指定*/
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  border-radius: 3px;
+  line-height: 100%;
+}
+
+@media (max-width: 768px) {
+  header .nav_container .openbtn {
+    display: block;
+  }
+}
+
+header .nav_container .openbtn span {
+  display: inline-block;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  /*アニメーションの設定*/
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  width: 30px;
+}
+
+header .nav_container .openbtn span:nth-of-type(1) {
+  top: 0px;
+}
+
+header .nav_container .openbtn span:nth-of-type(2) {
+  top: 8px;
+}
+
+header .nav_container .openbtn span:nth-of-type(3) {
+  top: 16px;
+}
+
+header .nav_container .openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  right: 18px;
+  -webkit-transform: translateY(6px) rotate(-45deg);
+          transform: translateY(6px) rotate(-45deg);
+}
+
+header .nav_container .openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+  /*真ん中の線は透過*/
+}
+
+header .nav_container .openbtn.active span:nth-of-type(3) {
+  top: 30px;
+  right: 18px;
+  -webkit-transform: translateY(-6px) rotate(45deg);
+          transform: translateY(-6px) rotate(45deg);
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+header.sticky {
+  position: fixed;
+  top: 0;
+  background: #282f35;
+  padding: 30px 0;
+}
+
+@media (max-width: 768px) {
+  header.sticky {
+    width: 100vw;
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .wrapper .contact_img {
+    height: 360px;
+  }
+}
+
+.wrapper .contact_img img {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .wrapper .contact_img img {
+    height: 360px;
+  }
+}
+
+.wrapper .fv_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.wrapper .fv_txt h1 {
+  font-size: 7.0rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .wrapper .fv_txt h1 {
+    font-size: 3.7rem;
+  }
+}
+
+.wrapper .our_content {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .wrapper .our_content {
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    left: 15px;
+    color: #fff;
+  }
+}
+
+.contact {
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.contact .wid_container form {
+  width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .contact .wid_container form {
+    width: 100%;
+  }
+}
+
+.contact .wid_container form .form-group {
+  margin-bottom: 22px;
+}
+
+.contact .wid_container form .form-group label {
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}
+
+.contact .wid_container form .form-group .check_group .form-check {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .contact .wid_container form .form-group .check_group .form-check {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+.contact .wid_container form .form-group .check_group .form-check label {
+  font-weight: normal;
+}
+
+.contact .wid_container form .form-group .form-control {
+  width: 100%;
+  line-height: 30px;
+}
+
+.contact .wid_container form .form-group .form-control-txt {
+  width: 100%;
+  line-height: 19px;
+}
+
+.contact .wid_container form .submit {
+  margin-top: 80px;
+}
+
+footer {
+  text-align: center;
+}
+
+footer p {
+  color: #282F35;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  padding: 30px 0;
+}
+/*# sourceMappingURL=contact.css.map */
