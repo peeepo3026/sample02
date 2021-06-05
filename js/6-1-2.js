@@ -55,6 +55,13 @@ $(function () {
     $('body').toggleClass('noscroll');
   });
 
+  $('.nav_item a').click(function () {
+    $('body').removeClass('noscroll')
+    $('.openbtn').removeClass('active');
+    $('.nav_contents').fadeToggle(500);
+  })
+
+
   // スムーススクロール
   // var headerHeight = 150;
   var headerHeight = $('header').outerHeight();
